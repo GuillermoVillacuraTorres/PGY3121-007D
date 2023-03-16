@@ -1,0 +1,44 @@
+#encabezado{
+    color: skyblue;
+}
+
+.otro{
+    color: brown;
+}
+
+h2,h3{
+    color:green;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+img{
+    height: 100px;
+    width: 100px;
+}
+h1{
+    text-align: center;
+}
+
+.negrita{
+    font-weight: bolder;
+}
+
+/* .contenedor{
+    border:solid red;
+    display: flex;
+    justify-content: space-around;
+} */
+
+.contenedor{
+    border:solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.contenedor2{
+    height: 200px;
+    width: 200px;
+    border:solid blue;
+}
