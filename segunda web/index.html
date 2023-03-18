@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Inicio</title>
 </head>
 <header>
@@ -21,31 +23,76 @@
         <a href="productos.html">
             <h3>Productos</h3>
         </a>
-
-
-        
-        
     </div>
 </header>
+
 <body>
-    
+    <div class="contenedor">
+        <h1>Inicio</h1>
+
+
+        <div class="contenedorInput">
+            <label>Ingrese nombre:</label>
+            <input type="text" placeholder="Ingrese nombre">
+            <label>Ingrese Contraseña:</label>
+            <input type="password" placeholder="Ingrese contraseña">
+            <label>Seleccione una fecha:</label>
+            <input type="date">
+            <label>Seleccione un mes:</label>
+            <input type="month" name="" id="">
+            <label>Seleccione un archivo:</label>
+            <input type="file" name="" id="">
+            <label>Selecione un color</label>
+            <input type="color" name="" id="">
+
+            <label>Ingrese números:</label>
+            <input type="number">
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese texto" maxlength="10"></textarea>
+
+            <button>Hola soy un botón</button>
+
+        </div>
+    </div>
 </body>
 <footer>
     <div class="contenedorFooter">
         <div class="boxFooter">
             <h3>Nuestra empresa</h3>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut vero doloribus consequatur eligendi aliquam maiores reiciendis esse maxime hic repudiandae.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sint odit sit, neque facilis nam saepe
+                dolor totam nobis ex similique dolorem, excepturi voluptates fugit recusandae sed consequuntur commodi
+                vel ipsum numquam adipisci? Accusamus qui dolore non ullam, repudiandae molestiae?</p>
         </div>
         <div class="boxFooter">
-            Reses sociales
-            <a href="https://www.instagram.com">Instagram</a>
-            <a href="https://www.facebook.com">Facebook</a>
-            <a href="https://www.telegram.org">Telegram</a>
-            <a href="https://www.twitter.com">Twitter</a>
+            <h3>Reses sociales</h3>
+            <div class="miniBox">
+                <img src="img/insta.png" alt="">
+                <a href="https://www.instagram.com">
+                    <h3>Instagram</h3>
+                </a>
+            </div>
+            <div class="miniBox">
+                <img src="img/face.png" alt="">
+                <a href="https://www.facebook.com.com">
+                    <h3>Facebook</h3>
+                </a>
+            </div>
+            <!-- <a href="https://www.facebook.com">Facebook</a>
+                <a href="https://www.telegram.org">Telegram</a>
+                <a href="https://www.twitter.com">Twitter</a> -->
         </div>
         <div class="boxFooter">
-            <h1>txt</h1>
+            <h3>Contacto</h3>
+            <div class="box">
+                <i class="material-icons">home</i>
+                <h4>Av. Vicuña Mackena 1234</h4>
+            </div>
+            <div class="box">
+                <i class="material-icons">email</i>
+                <h4>contacto@miweb.cl</h4>
+            </div>
         </div>
     </div>
 </footer>
+
 </html>
