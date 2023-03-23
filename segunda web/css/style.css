@@ -76,3 +76,33 @@ a{
     display: flex;
     flex-direction: column;
 }
+
+
+
+
+table{
+    width: 100%;
+}
+
+table th,tr{
+    text-align: center;
+}
+
+.data1{
+    background-color: bisque;
+    height: 50px;
+}
+
+.data2{
+    background-color: rgb(195, 117, 21);
+    height: 50px;
+}
+
+.data3{
+    background-color: rgb(224, 201, 172);
+    height: 30px;
+}
+
+body{
+    
+}
