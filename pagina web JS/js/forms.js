@@ -1,14 +1,21 @@
+<<<<<<< HEAD
 document.getElementById("valRut").style.display = "none";
 document.getElementById("valNombre").style.display = "none";
 document.getElementById("valApellido").style.display = "none";
 document.getElementById("ocultar").style.display = "none";
 
+=======
+>>>>>>> cc294b1d016975f271fc2ca2486ff40038dc7b7f
 function validarForm(){
     let txtRut = document.getElementById("txtRut").value;
     let txtNombre = document.getElementById("txtNombre").value;
     let txtApellido = document.getElementById("txtApellido").value;
 
+<<<<<<< HEAD
 /*     if (txtRut.length == 0) {
+=======
+    if (txtRut.length == 0) {
+>>>>>>> cc294b1d016975f271fc2ca2486ff40038dc7b7f
         alert("Debe ingresar su rut.");
         return;
     }
@@ -19,6 +26,7 @@ function validarForm(){
     if (txtApellido.length == 0) {
         alert("Debe ingresar su apellido.");
         return;
+<<<<<<< HEAD
     } */
 
 
@@ -69,5 +77,7 @@ function password(){
         input.type = "password";
         document.getElementById("ocultar").style.display = "none";
         document.getElementById("mostrar").style.display = "inline";
+=======
+>>>>>>> cc294b1d016975f271fc2ca2486ff40038dc7b7f
     }
 }
