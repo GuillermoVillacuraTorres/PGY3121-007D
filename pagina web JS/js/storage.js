@@ -38,3 +38,30 @@ function eliminarStorage(){
     console.log("Storage eliminado");
 }
 
+
+function eliminarUnoStorage(){
+    let valor = document.getElementById("txtRut").value;
+    let pesoArray;
+    //console.log(new Blob(pesoArray).size);
+    let storage = JSON.parse(localStorage.getItem("myStorage"));
+    pesoArray = new Blob([JSON.stringify(storage)]).size;
+    //console.log("SIZE", pesoArray);
+    console.log("STORAGE", storage);
+    let arrayTemporal = [];
+    let filtro = storage.filter(e => e.rut == valor);
+    console.log("Filtro",filtro);
+    if (filtro.length == 0) {
+        alert("Rut no encontrado!!!");
+    }else{
+        for (const i of storage) {
+            if (i.rut != valor) {
+                arrayTemporal.push(i);
+            }
+        }
+    
+        console.log("Array temporal",arrayTemporal);
+            localStorage.setItem("myStorage",JSON.stringify(arrayTemporal));    
+    }
+
+
+}
