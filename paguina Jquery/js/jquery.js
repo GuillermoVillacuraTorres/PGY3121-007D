@@ -75,3 +75,22 @@ $.getJSON('https://mindicador.cl/api', function(data){
 }).fail(function(){
     console.error("Error al consumir la API");
 })
+
+
+/* $(function(){
+    $("#buscar").on('keyup', function(){
+        let valor = $(this).val().toLowerCase();
+        $("table tbody tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1);
+        })
+    })
+}) */
+
+$(function(){
+    $("#btnBuscar").on('click', function(){
+        let valor = $("#buscar").val().toLowerCase();
+        $("table tbody tr").filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1);
+        })
+    })
+})
