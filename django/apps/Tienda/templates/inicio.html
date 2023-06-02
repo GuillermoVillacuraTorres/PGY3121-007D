@@ -1,6 +1,17 @@
 {% extends "./base.html" %}
+{% load static %}
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
 
 
 {% block body %}
     <h1>Mi web con Django!</h1>
+    <img src="{% static 'img/mario.jpg' %}" alt="">
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/funciones.js' %}"></script>
 {% endblock %}
