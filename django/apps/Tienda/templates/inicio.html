@@ -13,7 +13,7 @@
             {% for p in cate_perros %}
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{p.imagen_url}}" class="card-img-top" alt="...">
+                    <img src="{{p.imagen_url.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{p.nombre}}</h5>
                       <p class="card-text">{{p.descripcion}}</p>
@@ -30,7 +30,7 @@
             {% for p in cate_gatos %}
             <div class="col">
                 <div class="card" style="width: 18rem;">
-                    <img src="{{p.imagen_url}}" class="card-img-top" alt="...">
+                    <img src="{{p.imagen_url.url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{p.nombre}}</h5>
                       <p class="card-text">{{p.descripcion}}</p>

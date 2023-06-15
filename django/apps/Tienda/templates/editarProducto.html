@@ -1,7 +1,7 @@
 {% extends './base.html' %}
 
 {% block body %}
-    <h1>Agregar productos</h1>
+    <h1>Editar productos</h1>
 
 
     <div class="container">
@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>
-                    <input name="txtSku" id="txtSku" type="text" class="form-control">
+                    <input readonly value="{{prod.sku}}" name="txtSku" id="txtSku" type="text" class="form-control">
                 </div>
 
                 <div class="col-md-8">
@@ -54,36 +54,4 @@
         </form>
     </div>
 
-
-    <div class="container mt-5">
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">sku</th>
-                <th scope="col">Imagen</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Opciones</th>
-              </tr>
-            </thead>
-            <tbody>
-                {% for p in prod %}
-              <tr>
-                <th scope="row">{{p.sku}}</th>
-                <td><img src="{{p.imagen_url.url}}" alt="" height="100"></td>
-                <td>{{p.nombre}}</td>
-                <td>{{p.stock}}</td>
-                <td>{{p.precio}}</td>
-                <td>{{p.descripcion}}</td>
-                <td>{{p.id_categoria}}</td>
-                <td><a href="/editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Eliminar</a></td>
-              </tr>
-              {% endfor %} 
-            </tbody>
-          </table>
-    </div>
-{% endblock %}
+    {% endblock %}

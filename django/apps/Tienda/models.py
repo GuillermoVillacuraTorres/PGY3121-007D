@@ -17,7 +17,7 @@ class Producto(models.Model):
     precio = models.IntegerField()
     descripcion = models.CharField(max_length=200)
     id_categoria = models.ForeignKey(Categoria,on_delete=models.CASCADE)
-    imagen_url = models.CharField(max_length=200)
+    imagen_url = models.ImageField(upload_to='imagenesProducto')
 
     def __str__(self):
         txt = "N° {0} - Stock: {1} - nombre: {2}"
