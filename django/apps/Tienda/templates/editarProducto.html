@@ -5,7 +5,7 @@
 
 
     <div class="container">
-        <form action="/agregarProductoForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <form action="/editarProductoForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>
@@ -14,18 +14,18 @@
 
                 <div class="col-md-8">
                     <label for="txtNombre">Nombre:</label>
-                    <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+                    <input value="{{prod.nombre}}" name="txtNombre" id="txtNombre" type="text" class="form-control">
                 </div>
 
                 <div class="col-md-4">
                     <label for="txtStock">Stock:</label>
-                    <input name="txtStock" id="txtStock" type="text" class="form-control">
+                    <input value="{{prod.stock}}" name="txtStock" id="txtStock" type="text" class="form-control">
                 </div>
 
 
                 <div class="col-md-4">
                     <label for="txtPrecio">Precio:</label>
-                    <input name="txtPrecio" id="txtPrecio" type="text" class="form-control">
+                    <input value="{{prod.precio}}" name="txtPrecio" id="txtPrecio" type="text" class="form-control">
                 </div>
 
                 <div class="col-md-4">
@@ -33,18 +33,19 @@
                     <select name="cmbCategoria" id="cmbCategoria" class="form-select" aria-label="Default select example">
                         <option disabled selected>Seleccione</option>
                         {% for c in cate %}
-                        <option value="{{c.id_categoria}}">{{c.nombre_categoria}}</option>
+                        <option value="{{c.id_categoria}}" {% if c.id_categoria == prod.id_categoria.id_categoria %} selected {% endif %} >{{c.nombre_categoria}}</option>
                         {% endfor %}
                       </select>
                 </div>
 
                 <div class="col-md-12">
                     <label for="txtDescripcion">Descripción:</label>
-                    <input name="txtDescripcion" id="txtDescripcion" type="text" class="form-control">
+                    <input value="{{prod.descripcion}}" name="txtDescripcion" id="txtDescripcion" type="text" class="form-control">
                 </div>
 
                 <div class="col-md-12">
                     <label for="txtImg">Imagen Url:</label>
+                    <img src="{{prod.imagen_url.url}}" height="100" alt="">
                     <input name="txtImg" id="txtImg" type="file" class="form-control">
                 </div>
 

@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
+import os
+from django.conf import settings
 # Create your views here.
 
 
@@ -36,4 +38,42 @@ def agregarProducto(request):
 
 def cargarEditarProducto(request,sku):
     productos = Producto.objects.get(sku = sku)
-    return render(request,"editarProducto.html",{"prod":productos})
+    categorias = Categoria.objects.all()
+    return render(request,"editarProducto.html",{"prod":productos,"cate":categorias})
+
+def editarProducto(request):
+    v_sku = request.POST['txtSku']
+    productoBD = Producto.objects.get(sku = v_sku)
+    v_nombre = request.POST['txtNombre']
+    v_stock = request.POST['txtStock']
+    v_precio = request.POST['txtPrecio']
+    v_descripcion = request.POST['txtDescripcion']
+    v_categoria = Categoria.objects.get(id_categoria = request.POST['cmbCategoria'])
+
+    try:
+        v_img = request.FILES['txtImg']
+        ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(productoBD.imagen_url))
+        os.remove(ruta_imagen)
+    except:
+        v_img = productoBD.imagen_url
+
+
+    productoBD.nombre = v_nombre
+    productoBD.stock = v_stock
+    productoBD.precio = v_precio
+    productoBD.descripcion = v_descripcion
+    productoBD.imagen_url = v_img
+    productoBD.id_categoria = v_categoria
+
+    productoBD.save()
+
+
+    return redirect('/agregarProducto')
+
+
+def eliminarProducto(request,sku):
+    producto = Producto.objects.get(sku = sku)
+    ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(producto.imagen_url))
+    os.remove(ruta_imagen)
+    producto.delete()
+    return redirect('/agregarProducto')

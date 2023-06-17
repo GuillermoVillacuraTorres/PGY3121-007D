@@ -1,11 +1,18 @@
 {% extends './base.html' %}
 
+
+{% load static %}
+
+{% block title %}
+  Agregar producto
+{% endblock %}
+
 {% block body %}
     <h1>Agregar productos</h1>
 
 
     <div class="container">
-        <form action="/agregarProductoForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <form id="agregarProductoForm" action="/agregarProductoForm" method="POST" enctype="multipart/form-data"> {% csrf_token %}
             <div class="row">
                 <div class="col-md-4">
                     <label for="txtSku">SKU:</label>
@@ -80,10 +87,15 @@
                 <td>{{p.descripcion}}</td>
                 <td>{{p.id_categoria}}</td>
                 <td><a href="/editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a></td>
-                <td><a href="" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="/eliminarProducto/{{p.sku}}" class="btn btn-danger">Eliminar</a></td>
               </tr>
               {% endfor %} 
             </tbody>
           </table>
     </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/agregarProducto.js' %}"></script>
 {% endblock %}
